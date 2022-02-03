@@ -1,5 +1,4 @@
 // https://developer.nvidia.com/blog/gpu-pro-tip-cuda-7-streams-simplify-concurrency/
-
 const int N = 1 << 20;
 
 __global__ void kernel(float *x, int n)
