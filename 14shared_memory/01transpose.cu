@@ -51,6 +51,8 @@ int main(){
     }
     
     cudaMemcpy(d_idata, h_idata, size, cudaMemcpyHostToDevice); // cpu->>gpu
+    // 多跑几轮
+    // for(int i = 0; i < 100; i++)
     transpose<<<blocks, threads>>>(d_odata, d_idata);
     cudaMemcpy(h_odata, d_odata, size, cudaMemcpyDeviceToHost); // gpu->>cpu
     cudaDeviceSynchronize();
