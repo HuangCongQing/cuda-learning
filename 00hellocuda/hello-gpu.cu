@@ -4,13 +4,13 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2022-02-02 20:13:18
- * @LastEditTime: 2022-02-03 10:19:26
+ * @LastEditTime: 2022-05-01 13:08:44
  * @FilePath: /cuda-learning/00hellocuda/hello-gpu.cu
  */
 #include <stdio.h>
 
 void cpu(){
-    printf("hello cpu\n");
+    printf("hello cpu===\n");
 }
 // global 将在gpu上运行并可全局调用
 __global__ void gpu(){
@@ -18,8 +18,10 @@ __global__ void gpu(){
     // blockIdx.x * blockDim.x + threadIdx.x; 
     // 只希望第一个block的第一个线程去打印
     if(blockIdx.x==0&&threadIdx.x==0){
+        printf("只希望第一个block的第一个线程去打印: \n");
         printf("hello gpu\n");
     }
+    // printf("hello gpu\n");
 }
 
 
