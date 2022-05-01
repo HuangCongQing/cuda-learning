@@ -1,0 +1,26 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "nvcc",  // ============================
+            "args":["-g","${file}","-o","${fileDirname}/${fileBasenameNoExtension}.out", //===================
+                // include 头文件=====================
+                "-I", "/usr/local/cuda/include",
+                "-I", "/usr/local/cuda-11.4/samples/common/inc", //  修改------
+                // lib 库文件地址===================
+                "-L", "/usr/local/cuda/lib64",   
+                "-L", "/usr/local/cuda-11.4/samples/common/lib",  // 修改------
+                    
+                "-l", "cudart",                           
+                "-l", "cublas",
+                "-l", "cudnn",
+                "-l", "curand",
+                "-D_MWAITXINTRIN_H_INCLUDED"  
+            ]
+        }
+    ]
+}
