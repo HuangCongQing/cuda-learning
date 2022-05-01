@@ -7,7 +7,7 @@
           "${workspaceFolder}",
           "/usr/include",             
           "/usr/include/x86_64-linux-gnu/sys",
-          "usr/local/cuda-11.4/include" // 修改=============================
+          "/usr/local/cuda-11.4/include" // 修改=============================
         ],
         "defines": [],
         "browse":{
