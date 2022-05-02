@@ -1,4 +1,4 @@
-
+// 跨步循环(数据量比block*threads 要多) https://www.yuque.com/huangzhongqing/hpc/xtl960#SkGBb
 #include <stdio.h>
 #include <stdlib.h> // cpu的malloc函数
 
@@ -12,7 +12,7 @@ void cpu(int *a , int N){
 // global 将在gpu上运行并可全局调用
 __global__ void gpu(int *a, int N){
     int threadi = blockIdx.x * blockDim.x + threadIdx.x;
-    int stride = gridDim.x * blockDim.x; // 所以线程数===============================
+    int stride = gridDim.x * blockDim.x; // (block数量*每个block的线程数)=所有线程数===============================
     for (int i = threadi;i<N;i+=stride){
         a[i]*=2; // 放大2倍
     }
