@@ -1,6 +1,7 @@
 from setuptools import setup
 from torch.utils.cpp_extension import BuildExtension, CUDAExtension
 
+# 参考：/home/hcq/tensorrt/PCDet/setup.py
 setup(
     name="add2",
     version="0.0.1+20220813",
