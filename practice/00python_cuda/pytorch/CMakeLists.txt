@@ -3,7 +3,13 @@ cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
 set(CMAKE_CUDA_COMPILER "/usr/local/cuda/bin/nvcc")
 project(add2 LANGUAGES CXX CUDA)
 
+# python路径
+# 如果使用的是非系统目录下的 Python 可以通过指定 Python3_ROOT_DIR 改变查找路径
+# set(Python3_ROOT_DIR "${CMAKE_SOURCE_DIR}/venv")
+
 find_package(Python REQUIRED)
+# find_package(Python3 COMPONENTS Interpreter Development)
+
 find_package(CUDA REQUIRED)
 
 execute_process(
@@ -19,7 +25,8 @@ find_package(Torch REQUIRED)
 find_library(TORCH_PYTHON_LIBRARY torch_python PATHS "${TORCH_INSTALL_PREFIX}/lib")
 
 # modify to your own python path, or delete it if ok
-include_directories(/usr/include/python3.7)
+# include_directories(/usr/include/python3.7) 
+include_directories(/home/hcq/anaconda3/envs/pcdet/include/python3.8) # 修改================================
 include_directories(../include)
 
 # 编译路径============================================================================
