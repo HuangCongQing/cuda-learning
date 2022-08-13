@@ -1,0 +1,3 @@
+# ninja log v5
+0	471	1660404532873991869	/home/hcq/github/cuda-learning/practice/00python_cuda/build/temp.linux-x86_64-3.8/kernel/add2_kernel.o	a25699b112dde848
+0	15766	1660404548162422110	/home/hcq/github/cuda-learning/practice/00python_cuda/build/temp.linux-x86_64-3.8/pytorch/add2_ops.o	af4904dced2fc588

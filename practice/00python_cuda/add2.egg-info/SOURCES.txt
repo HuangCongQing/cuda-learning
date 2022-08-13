@@ -1,0 +1,6 @@
+add2.egg-info/PKG-INFO
+add2.egg-info/SOURCES.txt
+add2.egg-info/dependency_links.txt
+add2.egg-info/top_level.txt
+kernel/add2_kernel.cu
+pytorch/add2_ops.cpp
