@@ -4,10 +4,11 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "mynvcc",
             "type": "shell",
-            "command": "nvcc",  // ============================
-            "args":["-g","${file}","-o","${fileDirname}/${fileBasenameNoExtension}.out", //===================
+            "command": "nvcc",  // 编译命令nvcc，不是gcc============================
+            // "args": ["-g","-G","-o","${fileDirname}/test","${file}"]
+            "args":["-g","-G","${file}","-o","${fileDirname}/${fileBasenameNoExtension}.out", //===================这个命令执行起来也就是：nvcc -g -G -o  metrixMul.cu
                 // include 头文件=====================
                 "-I", "/usr/local/cuda/include",
                 "-I", "/usr/local/cuda-11.4/samples/common/inc", //  修改------

@@ -8,13 +8,13 @@
             "name": "CUDA调试", // 调试名字
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}.out",
+            "program": "${fileDirname}/${fileBasenameNoExtension}.out",//对应的正是与.cu同一目录下的可执行文件
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
-            "preLaunchTask": "build",
+            "preLaunchTask": "mynvcc",  // 这个值正是我们在tasks.json中的label值
             "MIMode": "gdb",
             "setupCommands": [
                 {

@@ -10,7 +10,7 @@ __global__ void gpu(int *a, int *b, int *c_gpu){
     if(r < N && c < N){
         c_gpu[r * N + c] = a[r * N + c] + b[r * N +c];
     }
-    // printf("hello gpu\n");
+    printf("hello gpu\n");
 }
 
 // cpu
