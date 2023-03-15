@@ -59,13 +59,14 @@ int main(){
     int *a_cpu, *b_cpu, *a_gpu, *b_gpu, *c_cpu, *c_gpu, *c_gpu_cpu; // // gpu->>cpu===============================================
     size_t size = N * N * sizeof(int);
 
+    // 分配内存
     cudaMallocHost(&a_cpu, size);
     cudaMallocHost(&b_cpu, size);
-    cudaMallocHost(&c_cpu, size);
-    cudaMallocHost(&c_gpu_cpu, size); // // gpu->>cpu===============================================
+    cudaMallocHost(&c_cpu, size); // CPU计算结果
+    cudaMallocHost(&c_gpu_cpu, size); // // 计算结果gpu->>cpu===============================================
     cudaMalloc(&a_gpu, size); // 此函数 不能在cpu上访问gpu显存
     cudaMalloc(&b_gpu, size); // 此函数 不能在cpu上访问gpu显存
-    cudaMalloc(&c_gpu, size); // 此函数 不能在cpu上访问gpu显存
+    cudaMalloc(&c_gpu, size); // GPU计算结果（后面还需要转成CPU） 此函数 不能在cpu上访问gpu显存
     // 1 初始化
     for(int r=0;r<N;r++){
         for(int c=0;c<N;c++){
@@ -83,11 +84,11 @@ int main(){
     dim3 blocks((N + threads.x - 1) / threads.x, (N + threads.y - 1) / threads.y, 1 );
     // 调用gpu之前cpu转gpu
     cudaMemcpy(a_gpu, a_cpu, size, cudaMemcpyHostToDevice); // cpu->>gpu===============================================
-     cudaMemcpy(b_gpu, b_cpu, size, cudaMemcpyHostToDevice); // cpu->>gpu===============================================
+    cudaMemcpy(b_gpu, b_cpu, size, cudaMemcpyHostToDevice); // cpu->>gpu===============================================
     gpu<<<blocks, threads>>>(a_gpu, b_gpu, c_gpu);
     cudaDeviceSynchronize();
     // 拷贝 / gpu->>cpu
-    cudaMemcpy(c_gpu_cpu, c_gpu, size, cudaMemcpyDeviceToHost); // gpu->>cpu===============================================
+    cudaMemcpy(c_gpu_cpu, c_gpu, size, cudaMemcpyDeviceToHost); //计算结果再从 gpu->>cpu===============================================
     check(c_cpu, c_gpu_cpu) ? printf("ok") : printf("error");
 
     // end: 释放内存
