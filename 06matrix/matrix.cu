@@ -40,7 +40,7 @@ int main(){
     int *a, *b, *c_cpu, *c_gpu;
     size_t size = N * N * sizeof(int);
 
-    cudaMallocManaged(&a, size);
+    cudaMallocManaged(&a, size);  // 统一内存管理cudaMallocManaged既可以被cpu使用也可以被gpu使用
     cudaMallocManaged(&b, size);
     cudaMallocManaged(&c_cpu, size);
     cudaMallocManaged(&c_gpu, size);
