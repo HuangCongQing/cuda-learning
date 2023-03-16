@@ -8,7 +8,7 @@ cudaMallocHost:cpu
   ○ cudaMemcpy(host_a, device_a, size, cudaMemcpyDeviceToHost);
 个人笔记: https://www.yuque.com/huangzhongqing/hpc/nuqxif
 */
-#include <stdio.h>
+#include <stdio.h> //printf()
 #include <assert.h>
 
 #define N 64 // 定义
