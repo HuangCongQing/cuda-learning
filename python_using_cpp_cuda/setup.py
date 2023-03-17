@@ -1,6 +1,12 @@
 from setuptools import find_packages, setup
 from torch.utils.cpp_extension import BuildExtension, CUDAExtension
 
+''' 
+调用此算子示例：
+from cpp_CUDA_code import pointnet_cuda
+pointnet_cuda.ball_query_wrapper(xxx)
+'''
+
 if __name__ == '__main__':
 
     setup(
@@ -20,9 +26,10 @@ if __name__ == '__main__':
         },
         ext_modules=[
             CUDAExtension(
+                # 名字 ，调用`from cpp_CUDA_code import pointnet_cuda`
                 name="cpp_CUDA_code.pointnet_cuda",
                 sources=[
-                    "cpp_CUDA_code/pointnet_api.cpp",
+                    "cpp_CUDA_code/pointnet_api.cpp", #名字： ball_query_wrapper
                     "cpp_CUDA_code/ball_query.cpp",
                     "cpp_CUDA_code/ball_query_gpu.cu",
                 ]   
