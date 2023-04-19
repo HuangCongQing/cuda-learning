@@ -55,13 +55,13 @@ int main()
         add<<< gridSize, blockSize >>>(x, y, z, N);
         std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
         std::cout << "kernel:"
-                << std::chrono::duration_cast<std::chrono::microseconds>(end -
+                << std::chrono::duration_cast<std::chrono::nanoseconds>(end -
                                                                         begin)
                         .count()
-                << "us" << std::endl;
+                << "ns" << std::endl;
         if (i > 0) {
         avg_time +=
-            std::chrono::duration_cast<std::chrono::microseconds>(end - begin)
+            std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin)
                 .count();
         }
         
