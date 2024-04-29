@@ -10,7 +10,7 @@
 # cuda-learning
 cuda学习入门
 
-Note: https://www.yuque.com/huangzhongqing/hpc/pz921g
+Note: https://www.yuque.com/huangzhongqing/hpc/pz921g （暂未公开）
 
 ## 编译运行
 ```
