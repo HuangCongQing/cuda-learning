@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2022-02-02 20:08:32
- * @LastEditTime: 2024-05-07 19:39:19
+ * @LastEditTime: 2024-05-07 19:55:12
  * @FilePath: /cuda-learning/README.md
 -->
 # cuda-learning
@@ -47,3 +47,26 @@ python ball_query_example.py
 * [thrust](cuda_lib/thrust)
 * [cublas](cuda_lib/cublas)
 * [cutlass](cuda_lib/cutlass)
+
+### [cub](cuda_lib/cub)
+* TODO
+
+### [thrust](cuda_lib/thrust)
+* TODO
+
+
+### [cublas](cuda_lib/cublas)
+
+下面是测试[demo](cuda_lib/cublas/test_gemm.cpp)
+```shell
+# 编译：
+nvcc test_gemm.cpp -o test_gemm -L/usr/local/cuda/lib64 -lcudart -lcuda -lcublas
+# 运行：
+./test_gemm
+```
+链接：https://zhuanlan.zhihu.com/p/403247313
+
+
+
+### [cutlass](cuda_lib/cutlass)
+* TODO
