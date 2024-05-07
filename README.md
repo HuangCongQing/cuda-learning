@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2022-02-02 20:08:32
- * @LastEditTime: 2023-03-17 11:50:27
+ * @LastEditTime: 2024-05-07 19:39:19
  * @FilePath: /cuda-learning/README.md
 -->
 # cuda-learning
@@ -39,3 +39,11 @@ python setup.py develop
 python ball_query_example.py
 
 ```
+
+
+## CUDA相关库
+
+* [cub](cuda_lib/cub)
+* [thrust](cuda_lib/thrust)
+* [cublas](cuda_lib/cublas)
+* [cutlass](cuda_lib/cutlass)
