@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2023-03-15 15:28:41
- * @LastEditTime: 2023-03-15 16:01:29
+ * @LastEditTime: 2024-06-25 16:39:48
  * @FilePath: /cuda-learning/practice/01vecAdd/01vecAddBase.cu
  */
 
@@ -24,7 +24,8 @@ __global__ void add(float* x, float * y, float* z, int n)
     int stride = blockDim.x * gridDim.x;
     for (int i = index; i < n; i += stride)
     {
-        z[i] = x[i] + y[i];
+        // z[i] = x[i] + y[i];
+        atomicAdd(&z[i], x[i] + y[i]); // 推荐使用
     }
 }
 
