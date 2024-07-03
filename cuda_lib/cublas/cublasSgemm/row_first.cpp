@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2024-05-07 19:45:29
- * @LastEditTime: 2024-05-07 19:46:17
+ * @LastEditTime: 2024-07-03 17:20:12
  * @FilePath: /cuda-learning/cuda_lib/cublas/cublasSgemm/row_first.cpp
  * 编译运行：nvcc row_first.cpp -o row_first -L/usr/local/cuda/lib64 -lcudart -lcuda -lcublas 
  */
@@ -65,7 +65,7 @@ int main()
   float a = 1, b = 0;
   cublasSgemm(
           handle,
-          CUBLAS_OP_T,   //矩阵A的属性参数，转置，按行优先
+          CUBLAS_OP_T,   //矩阵A的属性参数，转置，按行优先<<<<<<<<<<<<
           CUBLAS_OP_T,   //矩阵B的属性参数，转置，按行优先
           A_ROW,          //矩阵A、C的行数
           B_COL,          //矩阵B、C的列数
