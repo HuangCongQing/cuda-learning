@@ -1,10 +1,10 @@
 /*
- * @Description: https://blog.csdn.net/u011197534/article/details/78378536
+ * @Description: // CUBLAS_OP_T （转置 行优先） https://blog.csdn.net/u011197534/article/details/78378536
  * @Author: HCQ
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2024-05-07 19:45:29
- * @LastEditTime: 2024-07-03 17:20:12
+ * @LastEditTime: 2024-07-03 17:24:12
  * @FilePath: /cuda-learning/cuda_lib/cublas/cublasSgemm/row_first.cpp
  * 编译运行：nvcc row_first.cpp -o row_first -L/usr/local/cuda/lib64 -lcudart -lcuda -lcublas 
  */

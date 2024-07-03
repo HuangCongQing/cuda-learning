@@ -1,11 +1,11 @@
 /*
- * @Description: https://www.yuque.com/huangzhongqing/hpc/deffu5up15g9mqum#P6Itc
+ * @Description: // CUBLAS_OP_T （转置 行优先） https://www.yuque.com/huangzhongqing/hpc/deffu5up15g9mqum#P6Itc
  * @Author: HCQ
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2024-07-03 17:16:14
- * @LastEditTime: 2024-07-03 17:18:49
- * @FilePath: /cuda-learning/cuda_lib/cublas/cublasSgemm/simple_column_first.cpp
+ * @LastEditTime: 2024-07-03 17:23:30
+ * @FilePath: /cuda-learning/cuda_lib/cublas/cublasSgemm/simple_row_first.cpp
  */
 #include <assert.h>
 #include <iostream>
@@ -39,6 +39,7 @@ cudaMemcpy(d_B, B, 12*sizeof(float), cudaMemcpyHostToDevice);
  
 cublasHandle_t handle;
 cublasCreate(&handle);
+// CUBLAS_OP_T （转置 行优先）
 cublasSgemm(handle, CUBLAS_OP_T, CUBLAS_OP_T, m, n, k, &alpha, d_A, 3, d_B, 4, &beta, d_C, 2);
 cublasDestroy(handle);
  

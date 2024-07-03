@@ -1,10 +1,10 @@
 /*
- * @Description: https://blog.csdn.net/u011197534/article/details/78378536
+ * @Description: CUBLS_OP_N（不转置 列优先） https://blog.csdn.net/u011197534/article/details/78378536
  * @Author: HCQ
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2024-05-07 19:45:32
- * @LastEditTime: 2024-07-03 16:36:45
+ * @LastEditTime: 2024-07-03 17:24:27
  * @FilePath: /cuda-learning/cuda_lib/cublas/cublasSgemm/column_first.cpp
  * 编译运行：nvcc column_first.cpp -o column_first -L/usr/local/cuda/lib64 -lcudart -lcuda -lcublas 
  */
